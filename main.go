@@ -30,3 +30,8 @@ func prefixoSaudacao(idioma string) (prefixo string) {
 func main() {
 	fmt.Print(Ola("", ""))
 }
+
+// Adciona recebe dois inteirośee retorna a soma deles
+func Adicionar(x, y int) int {
+	return x + y
+}
