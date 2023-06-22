@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 const espanhol = "Espanhol"
 const frances = "Francês"
@@ -54,16 +52,17 @@ func Soma(numeros []int) int {
 	return soma
 }
 
-func SomaTudo(numerosParaSomar ...[]int) (somas []int) {
-	quantidadeDeNumeros := len(numerosParaSomar)
-	somas = make([]int, quantidadeDeNumeros)
+func SomaTudo(numerosParaSomar ...[]int) []int {
+	var somas []int
 
-	for i, numeros := range numerosParaSomar {
-		somas[i] = Soma(numeros)
+	for _, numeros := range numerosParaSomar {
+		somas = append(somas, Soma(numeros))
 	}
-	return
+	return somas
 }
 func main() {
-	fmt.Println(Ola("", ""))
-	fmt.Println(Repetir("a", 10))
+	x := []int{1, 2, 3, 4}
+	y := []int{5, 3, 4, 5}
+	resultado := SomaTudo(x, y)
+	fmt.Printf("%d", resultado)
 }
